@@ -100,18 +100,20 @@ const Productupdate = () => {
       <NavAdmin />
       <div className="container mx-auto mt-8 p-4 flex flex-col md:flex-row">
         {/* Left side: Image */}
-        <div className="md:w-1/2 w-full mb-4 md:mb-0">
+        <div className="md:w-1/2 w-full mb-4 md:mb-0 flex justify-center">
           <img
             src={image}
             alt="Product"
-            className="rounded-lg shadow-lg mx-auto"
-            style={{ width: "100%", maxWidth: "400px" }}
+            className="rounded-lg shadow-lg"
+            style={{ maxWidth: "100%", maxHeight: "auto" }}
           />
         </div>
         {/* Right side: Form */}
         <div className="md:w-1/2 w-full">
-          <h1 className="text-3xl font-bold mb-4">Update Product</h1>
-          <form onSubmit={handleSubmit} className="max-w-sm">
+          <h1 className="text-3xl font-bold mb-4 text-center md:text-left">
+            Update Product
+          </h1>
+          <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -144,40 +146,42 @@ const Productupdate = () => {
                 required
               />
             </div>
-            <div className="mb-4">
-              <label
-                htmlFor="price"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Price ($)
-              </label>
-              <input
-                type="number"
-                id="price"
-                value={price}
-                onChange={(e) => setPrice(Number(e.target.value))}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                min="0"
-                step="0.01"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="countInStock"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Quantity
-              </label>
-              <input
-                type="number"
-                id="countInStock"
-                value={countInStock}
-                onChange={(e) => setCountInStock(Number(e.target.value))}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                min="0"
-                required
-              />
+            <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  htmlFor="price"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Price ($)
+                </label>
+                <input
+                  type="number"
+                  id="price"
+                  value={price}
+                  onChange={(e) => setPrice(Number(e.target.value))}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="countInStock"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Quantity
+                </label>
+                <input
+                  type="number"
+                  id="countInStock"
+                  value={countInStock}
+                  onChange={(e) => setCountInStock(Number(e.target.value))}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  min="0"
+                  required
+                />
+              </div>
             </div>
             <div className="mb-6">
               <label
@@ -195,7 +199,7 @@ const Productupdate = () => {
                 required
               />
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-center md:justify-start">
               <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"

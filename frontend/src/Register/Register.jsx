@@ -40,16 +40,16 @@ const Register = () => {
 
   return (
     <div
-      className=" h-full w-full bg-cover bg-center flex items-center absolute top-0 left-0"
+      className="h-full w-full bg-cover bg-center flex items-center justify-center absolute top-0 left-0 p-4"
       style={{
         backgroundImage:
           "url('https://i.pinimg.com/564x/d8/29/f8/d829f86b22c68f0283467144bbc6b959.jpg')",
       }}
     >
-      <div className="container mx-auto flex justify-between p-4">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between p-4 bg-white bg-opacity-70 rounded-lg shadow-lg">
         {/* Left side: Additional content */}
-        <div className="w-full md:w-1/2 p-8  ">
-          <h1 className="text-4xl font-bold text-black mb-4">
+        <div className="w-full md:w-1/2 p-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Welcome to Our Platform
           </h1>
           <p className="text-black text-lg">
@@ -57,7 +57,7 @@ const Register = () => {
           </p>
         </div>
         {/* Right side: Registration form */}
-        <div className="hidden md:block w-1/2 p-8">
+        <div className="w-full md:w-1/2 p-8">
           <h1 className="text-3xl font-bold mb-4 text-center">Register</h1>
           <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
             <div className="mb-4">

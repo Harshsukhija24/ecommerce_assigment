@@ -42,19 +42,21 @@ const Home = () => {
     <>
       <Nav />
       <div className="container mx-auto mt-6 px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Products</h1>
-          <div className="relative">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-0">
+            Products
+          </h1>
+          <div className="relative w-full md:w-auto">
             <input
               type="text"
               placeholder="Search products..."
               value={searchTerm}
               onChange={handleSearchInputChange}
-              className="px-4 py-2 w-64 md:w-80 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 w-full md:w-64 lg:w-80 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div
@@ -75,7 +77,9 @@ const Home = () => {
               </div>
             ))
           ) : (
-            <p className="text-center col-span-3">No products found.</p>
+            <p className="text-center col-span-1 sm:col-span-2 md:col-span-3">
+              No products found.
+            </p>
           )}
         </div>
       </div>

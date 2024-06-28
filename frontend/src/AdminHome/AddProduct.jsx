@@ -8,10 +8,9 @@ const AddProduct = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
-  const [countInStock, setcountInStock] = useState(0); // New state for quantity
+  const [countInStock, setcountInStock] = useState(0);
   const navigate = useNavigate();
 
-  // Update the handleSubmit function in AddProduct.jsx
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -42,9 +41,11 @@ const AddProduct = () => {
   return (
     <>
       <NavAdmin />
-      <div className="container mt-4 mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Add Product</h1>
-        <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
+      <div className="container mx-auto p-4 mt-4">
+        <h1 className="text-3xl font-bold mb-4 text-center md:text-left">
+          Add Product
+        </h1>
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -79,42 +80,44 @@ const AddProduct = () => {
               required
             />
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="price"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Price ($)
-            </label>
-            <input
-              type="number"
-              id="price"
-              value={price}
-              onChange={(e) => setPrice(Number(e.target.value))}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter product price"
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="quantity"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Quantity
-            </label>
-            <input
-              type="number"
-              id="quantity"
-              value={countInStock}
-              onChange={(e) => setcountInStock(Number(e.target.value))}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter product quantity"
-              min="0"
-              required
-            />
+          <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="price"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Price ($)
+              </label>
+              <input
+                type="number"
+                id="price"
+                value={price}
+                onChange={(e) => setPrice(Number(e.target.value))}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter product price"
+                min="0"
+                step="0.01"
+                required
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="quantity"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Quantity
+              </label>
+              <input
+                type="number"
+                id="quantity"
+                value={countInStock}
+                onChange={(e) => setcountInStock(Number(e.target.value))}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter product quantity"
+                min="0"
+                required
+              />
+            </div>
           </div>
           <div className="mb-6">
             <label
@@ -133,7 +136,7 @@ const AddProduct = () => {
               required
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center md:justify-end">
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

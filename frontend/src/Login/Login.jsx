@@ -45,19 +45,19 @@ const Login = () => {
           "url('https://i.pinimg.com/564x/d8/29/f8/d829f86b22c68f0283467144bbc6b959.jpg')",
       }}
     >
-      <div className="container mx-auto flex justify-end p-4">
+      <div className="container mx-auto flex flex-col md:flex-row justify-center items-center p-4">
         {/* Left side: Introductory text */}
-        <div className="w-1/2 hidden mt-7 ml-7 md:block">
-          <h1 className="text-4xl font-bold text-black mb-4">
+        <div className="w-full md:w-1/2 p-4 text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Welcome to eCommerce
           </h1>
-          <p className="text-black text-lg">
+          <p className="text-black text-base md:text-lg">
             Discover a wide range of products and enjoy a seamless shopping
             experience.
           </p>
         </div>
         {/* Right side: Login form */}
-        <div className="w-full md:w-1/2 p-6">
+        <div className="w-full md:w-1/2 p-6 bg-opacity-80 ">
           <div className="text-center mb-8">
             <h1 className="text-3xl text-black font-bold">Login</h1>
           </div>
@@ -74,7 +74,7 @@ const Login = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="shadow appearance-none border border-transparent rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Enter your email"
                 required
               />
@@ -91,7 +91,7 @@ const Login = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="shadow appearance-none border border-transparent rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Enter your password"
                 required
               />
@@ -99,24 +99,24 @@ const Login = () => {
             <div className="flex items-center justify-between">
               <button
                 type="submit"
-                className="bg-black  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Sign In
               </button>
             </div>
             <div className="mt-4 text-center">
-              <p className="text-white">
+              <p className="text-gray-700">
                 New to eCommerce?{" "}
                 <Link
                   to="/Register"
-                  className=" text-gray-400 hover:text-blue-700 font-bold"
+                  className="text-gray-400 hover:text-blue-700 font-bold"
                 >
                   Sign Up
                 </Link>
               </p>
             </div>
             <div className="mt-4 text-center">
-              <p className="text-white">
+              <p className="text-gray-700">
                 Are you a company employee?{" "}
                 <Link
                   to="/admin/Login"

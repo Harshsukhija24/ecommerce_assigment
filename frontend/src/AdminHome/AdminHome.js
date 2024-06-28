@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavAdmin from "../Components/NavAdmin";
 import Footer from "../Components/Footer";
+
 const Home = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
@@ -30,8 +31,10 @@ const Home = () => {
     <>
       <NavAdmin />
       <div className="container mx-auto mt-8 p-4">
-        <h1 className="text-3xl font-bold mb-4">Products</h1>
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <h1 className="text-3xl font-bold mb-4 text-center md:text-left">
+          Products
+        </h1>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {products.length > 0 ? (
             products.map((product) => (
               <li

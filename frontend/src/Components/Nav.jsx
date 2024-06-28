@@ -17,29 +17,35 @@ const Nav = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-blue-500 py-4 z-10">
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <p className="text-white text-xl font-bold">E Commerce</p>
-        <ul className="flex space-x-4">
-          <li>
-            <button
-              onClick={handleLogout}
-              className="text-white hover:text-gray-200 transition-colors duration-200 focus:outline-none"
-            >
-              <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-              Logout
-            </button>
-          </li>
-          <li>
-            <Link
-              to="/cart"
-              className="text-white hover:text-gray-200 transition-colors duration-200 flex items-center"
-            >
-              <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
-              Cart
-            </Link>
-          </li>
-        </ul>
+    <nav className="bg-blue-500 shadow-md fixed top-0 left-0 right-0 z-10">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <Link to="/Home" className="text-white text-2xl font-bold">
+            E-Commerce
+          </Link>
+        </div>
+        <div className="flex items-center">
+          <ul className="flex space-x-4">
+            <li>
+              <Link
+                to="/cart"
+                className="text-white hover:text-gray-200 transition-colors duration-200 flex items-center"
+              >
+                <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+                Cart
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={handleLogout}
+                className="text-white hover:text-gray-200 transition-colors duration-200 flex items-center"
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

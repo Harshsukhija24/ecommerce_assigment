@@ -49,14 +49,22 @@ const AdminRegister = () => {
           "url('https://i.pinimg.com/564x/d8/29/f8/d829f86b22c68f0283467144bbc6b959.jpg')",
       }}
     >
-      <div className="w-full md:w-1/2 p-6 mb-16 ml-6">
-        <h2 className="text-3xl font-bold mb-4">Admin Registration</h2>
-        <p className="text-gray-700">.</p>
-      </div>
-      <div className="container mx-auto flex justify-center mb-7 items-center h-full">
-        <div className="max-w-md w-full p-8">
-          <h1 className="text-3xl font-bold mb-4 text-center">Register</h1>
-          <form onSubmit={handleSubmit}>
+      <div className="container mx-auto flex flex-col md:flex-row justify-between p-4 ">
+        {/* Left side: Additional content */}
+        <div className="w-full md:w-1/2 p-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
+            Welcome to Our Platform
+          </h1>
+          <p className="text-black text-lg">
+            Start your journey with us and enjoy a seamless experience.
+          </p>
+        </div>
+        {/* Right side: Registration form */}
+        <div className="w-full md:w-1/2 p-8">
+          <h1 className="text-3xl font-bold mb-4 text-center">
+            Admin Register
+          </h1>
+          <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -111,7 +119,7 @@ const AdminRegister = () => {
             <div className="mb-6">
               <label
                 htmlFor="verifyKey"
-                className="block text-black font-bold mb-2"
+                className="block text-gray-700 font-bold mb-2"
               >
                 Verification Key
               </label>
@@ -135,13 +143,13 @@ const AdminRegister = () => {
             </div>
           </form>
           <div className="mt-4 text-center">
-            <p className="text-white">
-              signin?{" "}
+            <p className="text-black">
+              Already have an account?{" "}
               <Link
                 to="/Admin/Login"
-                className=" text-gray-400 hover:text-blue-700 font-bold"
+                className="text-blue-500 hover:text-blue-700 font-bold"
               >
-                Sign Up
+                Sign In
               </Link>
             </p>
           </div>
