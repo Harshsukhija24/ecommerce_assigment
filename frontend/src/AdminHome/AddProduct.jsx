@@ -18,13 +18,16 @@ const AddProduct = () => {
     const productData = { name, description, price, image, countInStock };
 
     try {
-      const response = await fetch("http://localhost:3000/api/product", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(productData),
-      });
+      const response = await fetch(
+        "https://ecommerce-assigment.vercel.app/api/product",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productData),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();

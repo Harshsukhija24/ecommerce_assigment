@@ -14,7 +14,7 @@ const AdminLogin = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/admin/Adminlogin",
+        "https://ecommerce-assigment.vercel.app/api/admin/Adminlogin",
         {
           method: "POST",
           headers: {

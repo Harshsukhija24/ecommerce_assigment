@@ -16,7 +16,9 @@ const Productdetail = () => {
     const fetchDetail = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:3000/api/product/${id}`);
+        const response = await fetch(
+          `https://ecommerce-assigment.vercel.app/api/product/${id}`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch product detail");
         }

@@ -15,7 +15,7 @@ const AdminRegister = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/admin/Adminregister",
+        "https://ecommerce-assigment.vercel.app/api/admin/Adminregister",
         {
           method: "POST",
           headers: {

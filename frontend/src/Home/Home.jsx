@@ -11,7 +11,9 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/product");
+        const response = await fetch(
+          "https://ecommerce-assigment.vercel.app/api/product"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

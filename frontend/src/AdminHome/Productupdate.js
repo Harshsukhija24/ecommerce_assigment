@@ -17,7 +17,9 @@ const Productupdate = () => {
     // Fetch the product data based on the ID
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/product/${id}`);
+        const response = await fetch(
+          `https://ecommerce-assigment.vercel.app/api/product/${id}`
+        );
         if (response.ok) {
           const data = await response.json();
           console.log("Product data fetched successfully:", data);
@@ -45,13 +47,16 @@ const Productupdate = () => {
     console.log("Product data to be updated:", productData);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/product/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(productData),
-      });
+      const response = await fetch(
+        `https://ecommerce-assigment.vercel.app/api/product/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productData),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -71,7 +76,7 @@ const Productupdate = () => {
       console.log("Deleting product...");
       try {
         const response = await fetch(
-          `http://localhost:3000/api/product/${id}`,
+          `https://ecommerce-assigment.vercel.app/api/product/${id}`,
           {
             method: "DELETE",
           }
