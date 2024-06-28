@@ -1,0 +1,21 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Compiled files
+/build/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore database files
+*.db
